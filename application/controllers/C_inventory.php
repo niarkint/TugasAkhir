@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_pegawai extends CI_Controller {
+class C_inventory extends CI_Controller {
 
 	public function __construct()
 	{
@@ -11,7 +11,7 @@ class C_pegawai extends CI_Controller {
 
 	public function index()
 	{
-		$data['inventory'] = $this->pegawai->get();
+		$data['inventory'] = $this->inventory->get();
 		$this->load->view('include/header');
 		$this->load->view('inventory/index',$data);
 		$this->load->view('include/footer');
@@ -35,9 +35,9 @@ class C_pegawai extends CI_Controller {
             'no_inv' => $no_inv,
 			'nama_inv' => $nama_inv,
 			'jumlah' => $jumlah,
-			'satuan' => satuan,
-			'harga_beli' => md5(harga_beli),
-			'keterangan' => keterangan,
+			'satuan' => $satuan,
+			'harga_beli' => md5($harga_beli),
+			'keterangan' => $keterangan,
 		);
 
 		$save = $this->inventory->insert($object);
@@ -62,26 +62,27 @@ class C_pegawai extends CI_Controller {
 		$keterangan = $this->input->post('keterangan');
 
 		$object = array(
-			'nama_pegawai' => $nama_pegawai,
-			'jabatan' => $jabatan,
-			'username' => $username,
-			'password' => md5($password),
-			'no_telp' => $no_telp,
-			'alamat' => $alamat
+            'no_inv' => $no_inv,
+			'nama_inv' => $nama_inv,
+			'jumlah' => $jumlah,
+			'satuan' => $satuan,
+			'harga_beli' => md5($harga_beli),
+			'keterangan' => $keterangan,
+		
 		);
 
 		// echo json_encode($object);
-		$update = $this->pegawai->update($id,$object);
+		$update = $this->inventory->update($id,$object);
 		if ($update) {
-			redirect('pegawai','refresh');
+			redirect('inventory','refresh');
 		}
 	}
 
 	public function delete($id)
 	{
-		$delete = $this->pegawai->delete($id);
+		$delete = $this->inventory->delete($id);
 		if ($delete) {
-			redirect('pegawai','refresh');
+			redirect('inventory','refresh');
 		}
 	}
 

@@ -33,7 +33,7 @@
 								<label for="satuan" class="col-sm-2 col-form-label">Satuan</label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" name="satuan" id="satuan"
-									value="<?php echo (isset($inventory[0]->satuan) ? $pegawai[0]->satuan : "") ?>">
+									value="<?php echo (isset($inventory[0]->satuan) ? $inventory[0]->satuan : "") ?>">
 								</div>
 							</div>
 							<div class="form-group row">

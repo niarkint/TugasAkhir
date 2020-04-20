@@ -58,6 +58,13 @@ $route['dashboard'] = 'C_dashboard';
 $route['barang'] = 'C_barang';
 $route['barang/insert'] = 'C_barang/insert';
 
+$route['inventory'] = 'C_inventory';
+$route['inventory/insert'] = 'C_inventory/insert';
+$route['inventory/save'] = 'C_inventory/save';
+$route['inventory/delete/(:any)'] = 'C_inventory/delete/$1';
+$route['inventory/edit/(:any)'] = 'C_inventory/edit/$1';
+$route['inventory/update/(:any)'] = 'C_inventory/update/$1';
+
 $route['pegawai'] = 'C_pegawai';
 $route['pegawai/insert'] = 'C_pegawai/insert';
 $route['pegawai/save'] = 'C_pegawai/save';
