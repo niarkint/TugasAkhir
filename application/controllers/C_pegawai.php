@@ -30,6 +30,10 @@ class C_pegawai extends CI_Controller {
 		}
 	}
 
+	public function deleteDataById($id){
+		$this->pegawai->delete($id);
+	}
+
 	public function insert()
 	{
 		$this->load->view('pegawai/insert');
@@ -54,9 +58,9 @@ class C_pegawai extends CI_Controller {
 		);
 
 		$save = $this->pegawai->insert($object);
-		if ($save) {
-			redirect('pegawai','refresh');
-		}
+		// if ($save) {
+		// 	redirect('pegawai','refresh');
+		// }
 	}
 
 

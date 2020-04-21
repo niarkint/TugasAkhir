@@ -17,7 +17,7 @@
   <!-- JQVMap -->
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqvmap/jqvmap.min.css') ?>">
   <!-- DataTables -->
-  <link rel="stylesheet" href="<?php echo base_url("assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css") ?>">
+  <!-- <link rel="stylesheet" href="<?php echo base_url("assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css") ?>"> -->
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/adminlte.min.css') ?>">
   <!-- overlayScrollbars -->

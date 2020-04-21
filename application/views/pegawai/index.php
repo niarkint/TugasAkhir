@@ -5,7 +5,7 @@
 				<div class="col-lg-12">
 					<div class="card card-info">
 						<div class="card-body">
-							<button type="button" class="btn btn-sm btn-success" data-toggle="modal"
+							<button type="button" class="btn btn-sm btn-success mb-4" data-toggle="modal"
 								data-target="#modal-default">
 								<i class="fas fa-edit"></i> Add
 							</button>
@@ -45,7 +45,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="card card-info">
-							<?php echo ($this->uri->segment(2) == "edit" ? form_open('pegawai/update/'.$this->uri->segment(3), 'class="form-horizontal"') : form_open('pegawai/save', 'class="form-horizontal"')); ?>
+							<form class="form-horizontal" id="form_input">
 							<div class="card-body">
 								<div class="form-group row">
 									<label for="nama_pegawai" class="col-sm-3 col-form-label">Nama</label>
@@ -94,7 +94,7 @@
 			<div class="modal-footer justify-content-between">
 				<button type="submit" class="btn btn-info">Simpan</button>
 				<button type="reset" class="btn btn-default float-right" data-dismiss="modal">Cancel</button>
-				<?php echo form_close(); ?>
+				</form>
 			</div>
 		</div>
 	</div>
