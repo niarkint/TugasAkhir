@@ -11,10 +11,23 @@ class C_pegawai extends CI_Controller {
 
 	public function index()
 	{
-		$data['pegawai'] = $this->pegawai->get();
+		// $data['pegawai'] = $this->pegawai->get();
+		$data['extra_script'] = '<script src="'.base_url().'assets/controllers/pegawai.js"></script>';
 		$this->load->view('include/header');
 		$this->load->view('pegawai/index',$data);
-		$this->load->view('include/footer');
+		$this->load->view('include/footer',$data);
+	}
+
+	public function getDataAll(){
+		if($this->input->is_ajax_request()){
+			echo json_encode($this->pegawai->get());
+		}
+	}
+
+	public function getDataById($id){
+		if($this->input->is_ajax_request()){
+			echo json_encode($this->pegawai->get($id));
+		}
 	}
 
 	public function insert()
@@ -45,6 +58,7 @@ class C_pegawai extends CI_Controller {
 			redirect('pegawai','refresh');
 		}
 	}
+
 
 	public function edit($id)
 	{

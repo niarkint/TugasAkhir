@@ -53,30 +53,47 @@
 <script src="<?php echo base_url('assets/plugins/jsgrid/demos/db.js') ?>"></script>
 <script src="<?php echo base_url('assets/plugins/jsgrid/jsgrid.min.js') ?>"></script>
 <!-- DataTables -->
-<script src="<?php echo base_url("assets/plugins/datatables/jquery.dataTables.js") ?>"></script>
-<script src="<?php echo base_url("assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js") ?>"></script>
+<!-- <script src="<?php echo base_url("assets/plugins/datatables/jquery.dataTables.js") ?>"></script>
+<script src="<?php echo base_url("assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js") ?>"></script> -->
+
+<!-- Include Extra Script -->
+
+<?php 
+    if(!empty($extra_script)){
+        if(is_array($extra_script)){
+            foreach($extra_script as $script){
+                echo $script;
+            };
+        }
+        else{
+            echo $extra_script;
+        }
+    }
+?>
+
+<!-- End Include Extra Script -->
 
 <script>
-  $(function () {
-    $('#datatable').DataTable();
-  });
+  // $(function () {
+  //   $('#datatable').DataTable();
+  // });
 
-  function hitung_total() {
-    var elements = document.getElementById("form_barang").elements;
-    var obj ={};
-    var total_barang = 0;
-    for(var i = 0 ; i < elements.length ; i++){
-      var item = elements.item(i);
-      obj[item.name] = item.value;
-      if (item.type == "number") {
-        total_barang = total_barang + Number(item.value);
+  // function hitung_total() {
+  //   var elements = document.getElementById("form_barang").elements;
+  //   var obj ={};
+  //   var total_barang = 0;
+  //   for(var i = 0 ; i < elements.length ; i++){
+  //     var item = elements.item(i);
+  //     obj[item.name] = item.value;
+  //     if (item.type == "number") {
+  //       total_barang = total_barang + Number(item.value);
 
-      }
-    }
-    document.getElementById("text_total_harga").innerHTML = "Rp. " + total_barang;
-    document.getElementById("total_harga").value = total_barang;
-    $('html, body').animate({scrollTop: '0px'}, 0);
-  }
+  //     }
+  //   }
+  //   document.getElementById("text_total_harga").innerHTML = "Rp. " + total_barang;
+  //   document.getElementById("total_harga").value = total_barang;
+  //   $('html, body').animate({scrollTop: '0px'}, 0);
+  // }
 
 </script>
 </body>
